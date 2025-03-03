@@ -81,4 +81,5 @@ def map(year_select, continent_select):
 # Run the app/dashboard
 if __name__ == '__main__':
     #app.run(debug=True)
-    app.run(debug=True, host="127.0.0.1", port=8050, dev_tools_hot_reload=True)
+    port = int(os.environ.get('PORT', 8050))  # Use PORT if available, otherwise default to 8050
+    app.run(host='0.0.0.0', port=port, debug=False)
