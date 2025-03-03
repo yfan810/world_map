@@ -5,6 +5,11 @@ import dash_vega_components as dvc
 from dash import Dash, html, dcc, Input, Output, callback
 import pandas as pd
 from data_map import happiness_data, world_countries
+import sys
+import os
+
+# Ensure the 'src' directory is in the Python path
+#sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
 
 # Initiatlize the app
