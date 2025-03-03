@@ -1,0 +1,22 @@
+# install with conda env create -f environment.yml
+
+name: world_happiness
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - altair-all
+  - python=3.11
+  - ipykernel
+  - pandas=2.2
+  - matplotlib>=3.2,<4.0
+  - numpy=1.26
+  - ipykernel
+  - dash
+  - dash-bootstrap-components
+  - plotly
+  - pip
+  - pip:
+      - country_converter
+      - geopandas
+      - dash-vega-components
