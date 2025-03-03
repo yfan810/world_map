@@ -4,6 +4,7 @@ import dash_bootstrap_components as dbc
 import dash_vega_components as dvc
 from dash import Dash, html, dcc, Input, Output, callback
 import pandas as pd
+import os
 
 
 url = "https://naciscdn.org/naturalearth/110m/cultural/ne_110m_admin_0_countries.zip"
