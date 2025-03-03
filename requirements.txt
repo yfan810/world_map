@@ -16,3 +16,4 @@ country_converter==1.3
 geopandas
 kagglehub==0.3.*
 vegafusion[embed]>=1.5.0
+vegafusion-python-embed>=1.5.0
