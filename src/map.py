@@ -4,13 +4,26 @@ import dash_bootstrap_components as dbc
 import dash_vega_components as dvc
 from dash import Dash, html, dcc, Input, Output, callback
 import pandas as pd
-from data_map import happiness_data, world_countries
-import sys
-import os
+#from data_map import happiness_data, world_countries
+#import sys
+#import os
 
-# Ensure the 'src' directory is in the Python path
-#sys.path.append(os.path.abspath(os.path.dirname(__file__)))
 
+url = "https://naciscdn.org/naturalearth/110m/cultural/ne_110m_admin_0_countries.zip"
+world_countries = gpd.read_file(url)
+
+world_countries = world_countries[
+    ["NAME", "CONTINENT", 'geometry']
+].rename(
+    columns = {'NAME': 'Country', 'CONTINENT':'Continent'}
+).replace(
+    {'Continent': ['North America', 'South America']}, 'Americas'
+).query(
+    'Continent != "Antarctica"'
+)
+
+# happiness data
+happiness_data = pd.read_csv("data/processed/reporting_world_happiness_dataset.csv")
 
 # Initiatlize the app
 app = Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
